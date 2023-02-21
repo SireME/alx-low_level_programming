@@ -4,7 +4,7 @@
 
 /**
  * _islower - check for lower case character
- * c - integer varaible to be checked
+ * @c: varaible to be checked
  * Description: program that checks for lower case character
  * Return: return 1 or 0
  **/
