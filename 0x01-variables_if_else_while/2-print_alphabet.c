@@ -19,6 +19,6 @@ int main(void)
 	}
 	putchar (*nl);
 
-	return 0;
+	return (0);
 }
 
