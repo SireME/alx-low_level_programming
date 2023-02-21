@@ -6,8 +6,7 @@
  * Description: Prints our alphabets from a to z in lower case
  * Return: returnns nothing
  **/
-
-
+void print_alphabet(void);
 void print_alphabet(void)
 {
 	char *nl = "\n";
@@ -27,7 +26,6 @@ void print_alphabet(void)
  * Description: print script followed by new line
  * Return:0
  **/
-
 int main(void)
 {
 print_alphabet();
