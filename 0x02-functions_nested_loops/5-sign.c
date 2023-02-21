@@ -16,10 +16,10 @@ int print_sign(int n)
 
 	if (n > 0)
 	{
-	char vls[] = "+, ";
+	char vls[] = "+";
 	int x;
 
-	for (x = 0; x < 3; x++)
+	for (x = 0; x < 1; x++)
 	{
 		_putchar(vls[x]);
 	}
@@ -27,10 +27,10 @@ int print_sign(int n)
 	}
 	else if (n == 0)
 	{
-	char vls[] = "0, ";
+	char vls[] = "0";
 	int x;
 
-	for (x = 0; x < 3; x++)
+	for (x = 0; x < 1; x++)
 	{
 		_putchar(vls[x]);
 	}
@@ -38,10 +38,10 @@ int print_sign(int n)
 	}
 	else if (n < 0)
 	{
-	char vls[] = "-1, ";
+	char vls[] = "-1";
 	int x;
 
-	for (x = 0; x < 3; x++)
+	for (x = 0; x < 1; x++)
 	{
 		_putchar(vls[x]);
 	}
