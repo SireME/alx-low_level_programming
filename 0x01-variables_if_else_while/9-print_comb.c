@@ -10,7 +10,6 @@
 
 int main(void)
 {
-	char *nl = "\n";
 	int nm;
 
 	for (nm = '0'; nm <= '9'; nm++)
@@ -22,7 +21,7 @@ int main(void)
 			putchar(' ');
 		}
 	}
-	putchar (*nl);
+	putchar ('\n');
 
 	return (0);
 }
