@@ -1,7 +1,6 @@
 #include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 /**
  * main - ini function
  * Description: The entry into the script
