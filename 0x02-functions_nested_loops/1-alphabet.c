@@ -18,17 +18,5 @@ void print_alphabet(void)
 	putchar(ch);
 	}
 	putchar (*nl);
-
-	return;
 }
 
-/**
- * main - ini function
- * Description: print script followed by new line
- * Return:0
- **/
-int main(void)
-{
-print_alphabet();
-	return (0);
-}
