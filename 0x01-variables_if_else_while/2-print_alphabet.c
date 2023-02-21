@@ -11,10 +11,11 @@
 int main(void)
 {
 	char *nl = "\n";
+	int ch;
 
-	for (int x = 'a'; x <= 'z'; x++)
+	for (ch = 'a'; ch <= 'z'; ch++)
 	{
-	putchar(x);
+	putchar(ch);
 	}
 	putchar (*nl);
 }
