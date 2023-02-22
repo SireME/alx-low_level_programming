@@ -4,7 +4,7 @@
 
 /**
  * print_to_98 - print natural numbers from n to 98
- * @n: Number to print from 
+ * @n: Number to print from
  * Description: print all natural numbers from n to 98
  * Return: nada
  **/
