@@ -1,5 +1,6 @@
 #include "main.h"
-#include <ctype.h>
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * _abs - absoluet value of int
  * @n: value to be computed
