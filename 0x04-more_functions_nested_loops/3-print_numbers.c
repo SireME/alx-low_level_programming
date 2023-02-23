@@ -1,4 +1,5 @@
 #include <ctype.h>
+#include "main.h"
 #include <stdio.h>
 /**
  * print_numbers - function to print numbers
@@ -6,7 +7,7 @@
  * Return: nada
  **/
 
-void print_numbers(void);
+void print_numbers(void)
 
 {
 	int vl;
@@ -15,6 +16,6 @@ void print_numbers(void);
 	{
 		_putchar('0' + vl);
 	}
-	_putchar('\n')
+	_putchar('\n');
 }
 
