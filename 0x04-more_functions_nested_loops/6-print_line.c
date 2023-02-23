@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 #include <ctype.h>
 /**
@@ -22,6 +23,7 @@ void print_line(int n)
 		{
 			_putchar('_');
 		}
+		_putchar('\n');
 	}
 }
 
