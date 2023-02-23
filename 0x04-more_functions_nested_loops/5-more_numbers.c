@@ -3,10 +3,12 @@
 #include <stdio.h>
 /**
  * more_numbers - function to print numbers
+ * @value: input of value function
  * Description: function that prints numbers from 0 to 14 10 times
  * Return: nada
  **/
 
+void print_long(long value);
 void more_numbers(void)
 
 {
@@ -24,11 +26,25 @@ void more_numbers(void)
 			}
 			if (vl > 9)
 			{
-				_putchar((vl / 10) + '0');
-				_putchar((vl % 10) + '0');
+				print_long(vl);
 			}
 		}
 		_putchar('\n');
 	}
 }
 
+/**
+ * print_long - function to to return long integer with putchar
+ * @value: intake of integer
+ * Description: This funcion when given an integer, it is returned
+ * Return: nada
+ **/
+
+void print_long(long value)
+{
+	if (value != 0)
+	{
+		print_long(value / 10);
+		_putchar((value % 10) + '0');
+	}
+}
