@@ -3,7 +3,8 @@
 /**
  * _isdigit - check if value is a digit
  * @c: value to be checked
- * Description: function that checks if a caharcter is a digit returning 1  0r 0
+ * Description: function that checks if a
+ * caharcter is a digit returning 1  0r 0
  * Return: binary 1 or 0
  **/
 
