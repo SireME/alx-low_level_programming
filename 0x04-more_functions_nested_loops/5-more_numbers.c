@@ -2,12 +2,12 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * print_numbers - function to print numbers
+ * more_numbers - function to print numbers
  * Description: function that prints numbers from 0 to 14 10 times
  * Return: nada
  **/
 
-void print_numbers(void)
+void more_numbers(void)
 
 {
 	int externl;
