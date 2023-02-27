@@ -11,9 +11,10 @@
 void _puts(char *str)
 
 {
-	long j;
+	int j,i;
+	i = strlen(str);
 
-	for (j = 0; j < strlen(str); j++)
+	for (j = 0; j < i; j++)
 	{
 		_putchar(str[j]);
 	}
