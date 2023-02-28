@@ -21,6 +21,8 @@ int _putchar(char c);
 int _abs(int);
 int _isupper(int c);
 int _isdigit(int c);
+int _atoi(char *s);
+
 
 #endif
 
