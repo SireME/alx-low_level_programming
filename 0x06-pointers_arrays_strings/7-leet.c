@@ -3,8 +3,8 @@
 
 /**
  * leet -  function to encode string to 1337
- * of a string to uppercase.
- *@s: string to be endcoded
+ * Description: encode string to the 1337 encoding
+ * @s: string to be endcoded
  * Return: s.
  */
 
@@ -26,4 +26,3 @@ char *leet(char *s)
 	}
 	return (s);
 }
-
