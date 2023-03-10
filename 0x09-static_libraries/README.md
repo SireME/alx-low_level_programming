@@ -1,3 +1,3 @@
 #About  
  
-This directory contains projects regarding the C programming language
+This directory contains projects regarding the creation of static libraries in C.
