@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 /**
- * main -  main function that prints minimum number 
+ * main -  main function to calculate change
  * of coins to make change
  *@argc: size of input array.
  *@argv: array of input parameters.
@@ -13,13 +13,14 @@
 
 int main(int argc, char *argv[])
 {
-	int  change, cents = atoi(argv[1]);
+	int cents, change;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	cents = atoi(argv[1]);
 	if (cents < 0)
 	{
 		printf("%d\n", 0);
