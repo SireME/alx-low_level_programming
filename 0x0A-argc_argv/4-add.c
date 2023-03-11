@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
-#include <string.h>
 
 /**
  * main -  main function that sums all positive numbers.
@@ -14,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int i;
-	int sum;
+	int sum = 0;
 
 	for (i = 1; i < argc; i++)
 	{
