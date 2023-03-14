@@ -21,10 +21,12 @@ char *str_concat(char *s1, char *s2)
 		s2 = "";
 
 	/**computing the length of both strings**/
-	for (i = 0; s1[i] || s2[i]; i++)
+	for (i = 0; s1[i]; i++)
 		len++;
+	for (i = 0; s2[i]; i++)
+                len++;
 
-	conc = malloc(sizeof(char) * len);
+	conc = malloc(sizeof(char) * (len + 1));
 	if (conc == NULL)
 	{
 		return (NULL);
