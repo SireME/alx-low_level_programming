@@ -52,5 +52,5 @@ int mstrlen(char *s)
 
 	while (*s++)
 		len++;
-	return (len);
+	return (len - 1);
 }
