@@ -36,6 +36,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (i = 0; i < n2; i++)
 		newstr[newstr_i++] = s2[i];
 
-	newstr[len1 + len2 + 1] = '\0';
+	newstr[newstr_i] = '\0';
 	return (newstr);
 }
