@@ -23,7 +23,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	if (n2 >= len2 + 1)
+	if (n2 >= len2)
 		n2 = len2;
 
 	newstr = malloc(sizeof(*newstr) * (len1 + n2 + 1));
