@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 int mstrlen(char *s);
@@ -48,9 +49,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 int mstrlen(char *s)
 {
-	int len;
+	int len = 0;
 
-	while (*s++)
+	while(*s++)
 		len++;
-	return (len - 1);
+	return (len);
 }
