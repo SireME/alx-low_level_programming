@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
 
+int mstrlen(char *s);
 /**
  * string_nconcat -  concatenate s1 with first nbytes s2.
  *@s1: first string to concatenate.
@@ -15,7 +15,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *newstr;
 	int i, j, n2 = n;
-	int len1 = strlen(s1), len2 = strlen(s2);
+	int len1 = mstrlen(s1), len2 = mstrlen(s2);
 
 	if (s1 == NULL)
 		s1 = "";
@@ -38,4 +38,19 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	newstr[i + j] = '\0';
 	return (newstr);
+}
+
+/**
+ * mstrlen -  calculate length of string.
+ *@s: string to calculate length.
+ * Return: string length.
+ */
+
+int mstrlen(char *s)
+{
+	int len;
+
+	while (*s++)
+		len++;
+	return (len);
 }
