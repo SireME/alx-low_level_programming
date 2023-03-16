@@ -15,7 +15,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 {
 	char *newstr;
-	int i, j, n2 = n;
+	int i, nstr_i = 0, n2 = n;
 	int len1 = mstrlen(s1), len2 = mstrlen(s2);
 
 	if (s1 == NULL)
@@ -32,12 +32,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 
 	for (i = 0; s1[i] != '\0'; i++)
-		newstr[i] = s1[i];
+		newstr[nstr_i++] = s1[i];
 
-	for (j = 0; j < n2; j++)
-		newstr[i + j] = s2[j];
+	for (i = 0; i < n2; i++)
+		newstr[nstr_i++] = s2[i];
 
-	newstr[i + j + 1] = '\0';
+	newstr[nstr_i] = '\0';
 	return (newstr);
 }
 
