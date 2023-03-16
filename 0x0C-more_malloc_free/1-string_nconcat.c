@@ -18,26 +18,26 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int i, nstr_i = 0, n2 = n;
 	int len1 = mstrlen(s1), len2 = mstrlen(s2);
 
-	if (s1 == NULL)
+	if (s1 == NULL) /*handle NULL values*/
 		s1 = "";
 
 	if (s2 == NULL)
 		s2 = "";
 
-	if (n2 >= len2)
+	if (n2 >= len2) /*handle length greater than 6*/
 		n2 = len2;
 
-	newstr = malloc(sizeof(*newstr) * (len1 + n2 + 1));
-	if (newstr == NULL)
+	newstr = malloc(sizeof(*newstr) * (len1 + n2 + 1)); /*allocate memory*/
+	if (newstr == NULL) /*ensure memory return is not NULL*/
 		return (NULL);
 
-	for (i = 0; s1[i] != '\0'; i++)
+	for (i = 0; s1[i] != '\0'; i++) /*add firs string*/
 		newstr[nstr_i++] = s1[i];
 
-	for (i = 0; i < n2; i++)
+	for (i = 0; i < n2; i++) /*add last string*/
 		newstr[nstr_i++] = s2[i];
 
-	newstr[nstr_i] = '\0';
+	newstr[nstr_i] = '\0'; /*ass terminating zero*/
 	return (newstr);
 }
 
