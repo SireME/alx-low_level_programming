@@ -12,7 +12,8 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 
 {
-	unsigned int *arr;
+	void *arr;
+	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
@@ -21,8 +22,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (arr == NULL) /*ensure memory return is not NULL*/
 		return (NULL);
 
-	/*for (i = 0; arr[i]; i++) initialise memory with zero*/
-	memset(arr, 0, (size * nmemb));
 
-	return (arr); /*typecast memory to a pointer*/
+	for (i = 0; i < (size * nmemb); i++) /*initialise memory with zero*/
+		*((char *)(arr) + i) = 0;
+
+	return (arr);
 }
