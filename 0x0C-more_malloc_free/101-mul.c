@@ -3,9 +3,6 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-void printe(void);
-void printi(long value);
-
 /**
  * main -  multiply two number, no print statement.
  *@argc: number of argumnets.
@@ -16,11 +13,12 @@ void printi(long value);
 int main(int argc, char *argv[])
 
 {
-	int vl, i, k;
+	unsigned long int vl;
+	int i, k;
 
 	if (argc != 3) /* ensure atleast or atmost 2 vectors passed*/
 	{
-		printe();
+		printf("Error\n");
 		exit(98);
 	}
 	for (i = 1; i < 3; i++) /* check if argument is digit using ascii*/
@@ -29,40 +27,13 @@ int main(int argc, char *argv[])
 		{
 			if (argv[i][k] < '0' || argv[i][k] > '9')
 			{
-				printe();
+				printf("Error\n");
 				exit(98);
 			}
 		}
 	}
 
-	vl = atoi(argv[1]) * atoi(argv[2]); /* compute multiplication*/
-	printi(vl);
-	putchar('\n');
-
+	vl = atoi(argv[1]) * atoi(argv[2]);
+	printf("%lu\n", vl);
 	return (0);
-}
-/**
- * printe -  print error message followed by new line..
- */
-void printe(void)
-{
-	char *e = "Error";
-	int i;
-
-	for (i = 0; e[i]; i++)
-		putchar(e[i]);
-	putchar('\n');
-}
-/**
- * printi -  print integer to standard output.
- * @value: integer value to be printed.
- */
-
-void printi(long value)
-{
-	if (value != 0)
-	{
-		printi(value / 10);
-		putchar((value % 10) + '0');
-	}
 }
