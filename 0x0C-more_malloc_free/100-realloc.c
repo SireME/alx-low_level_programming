@@ -3,6 +3,7 @@
 
 /**
  * _realloc -  reallocate memory.
+ * @ptr: old memory block to reallocate.
  *@old_size: size of pointer to reallocate.
  *@new_size: new size of pointer to be reallocated to.
  * Return: new reallocated pointer.
@@ -31,7 +32,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 
 	for (i = 0; i < old_size; i++) /*initialise memory with ptr values*/
-		*((char *)(nmem) + i) = *((char *)(ptr)+i);
+		*((char *)(nmem) + i) = *((char *)(ptr) + i);
 
 	free(ptr);
 	return (nmem);
