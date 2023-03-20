@@ -1,4 +1,4 @@
-#include "_putchar.c" /*include our putchar file for character printing*/
+#include <stdio.h>
 /**
  * main - main function to print the name of the file
  * it was compiled from
@@ -13,7 +13,7 @@ int main(void)
 	s = __FILE__; /*read constant macro to memory*/
 
 	while (*s++) /* use pointer logic to print file name*/
-		_putchar(*(s - 1));
-	_putchar('\n');
+		putchar(*(s - 1));
+	putchar('\n');
 	return (0);
 }
