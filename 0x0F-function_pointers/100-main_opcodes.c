@@ -3,8 +3,8 @@
 
 /**
  * main - function to print opcode of main function
- * @argv: length of finput
- * argv: input vector
+ * @argc: length of finput
+ * @argv: input vector
  *
  * Return: nothing
  */
