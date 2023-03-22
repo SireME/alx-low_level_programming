@@ -11,13 +11,10 @@
 
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	int i, cmp_value, cmp_i;
+	int i, cmp_value;
 
-	if (size <= 0)
+	if (size <= 0 || !array || !cmp)
 		return (-1);
-
-	if (!array || !cmp)
-		return (1);
 
 	if (cmp != NULL)
 	{
@@ -25,13 +22,10 @@ int int_index(int *array, int size, int (*cmp)(int))
 		{
 			cmp_value = cmp(array[i]);
 			if (cmp_value != 0)
-			{
-				cmp_i = i;
-				break;
-			}
+				return (i);
 
 		}
 	}
-	return (cmp_i);
 
+	return (-1);
 }
