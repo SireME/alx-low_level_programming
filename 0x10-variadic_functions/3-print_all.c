@@ -4,7 +4,6 @@
 /**
  * print_all - print all inputs
  * @format: string of types
- * @n: number of characters
  *
  * Return: nothing(print delimited strings)
  */
