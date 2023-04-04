@@ -38,13 +38,14 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			temp = current->next;
 			current->next = newnode;
 			newnode->next = temp;
-			break;
+
+			return (newnode);
 		}
 		index_vl++;
 		current = current->next;
 	}
 
-	if (idx > index_vl) /*handle impossible to insert case*/
+	if (idx > index_vl + 1) /*handle impossible to insert case*/
 		return (NULL);
 
 	return (newnode);
