@@ -46,7 +46,10 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 
 	if (idx > index_vl + 1) /*handle impossible to insert case*/
+	{
+		free(newnode);
 		return (NULL);
+	}
 
 	return (newnode);
 }
