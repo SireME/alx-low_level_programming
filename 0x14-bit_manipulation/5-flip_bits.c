@@ -1,17 +1,14 @@
-#include "main.h"
-
 /**
  * flip_bits - number of bits to flip from n to m
- * @n: first numb
- * @m: second numb
+ * @n: first number
+ * @m: second number
  *
  * Return: count of number of bits
  */
-
-unsigned int flip_bits(unsigned long int n, unsigned long int m)
+unsigned long int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int mask = m ^ n;
-	int num_bits = 0;
+	unsigned long int mask = m ^ n;
+	unsigned long int num_bits = 0;
 
 	while (mask > 0)
 	{
@@ -19,6 +16,6 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		mask &= (mask - 1);
 	}
 
-
 	return (num_bits);
 }
+
