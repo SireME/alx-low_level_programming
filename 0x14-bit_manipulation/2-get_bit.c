@@ -13,7 +13,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned long int m = n;
 	unsigned int len = 0;
 
-	while (m > 0)/*compute length of binary number*/
+	while (m > 0u)/*compute length of binary number*/
 	{
 		m >>= 1;
 		len++;
