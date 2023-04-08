@@ -11,35 +11,16 @@
 int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int m = n;
-	int len = 0, i;
-	int internal_in = 0, ext_in = index;
+	unsigned int len = 0;
 
-	while (n > 0)/*length of integer*/
+	while (m > 0)/*compute length of binary number*/
 	{
-		n >>= 1;
+		m >>= 1;
 		len++;
 	}
 
-	for (i = len - 1; i >= 0; i--)/*navigate through binary int*/
-	{
-		if ((m >> i) & 1)/*use bitwise logic to get bits in order*/
-		{
-			if (ext_in == 0)
-				return (1);
+	if (index >= len)/*terminate if index is greater than or len*/
+		return (-1);
 
-			if (internal_in == ext_in - 1)
-				return (1);
-		}
-		else
-		{
-			if (ext_in == 0)
-				return (0);
-
-			if (internal_in == ext_in - 1)
-				return (0);
-		}
-
-		internal_in++;
-	}
-	return (-1);
+	return ((n >> index) & 1); /*return value at index*/
 }

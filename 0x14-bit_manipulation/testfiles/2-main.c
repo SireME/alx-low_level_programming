@@ -16,5 +16,11 @@ int main(void)
 	printf("%d\n", n);
 	n = get_bit(1024, 0);
 	printf("%d\n", n);
+	n = get_bit(5, 3);
+        printf("%d\n", n);
+	n = get_bit(5, 0);
+        printf("%d\n", n);
+	n = get_bit(5, 2);
+        printf("%d\n", n);
 	return (0);
 }
