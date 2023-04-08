@@ -12,7 +12,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int m = n;
 	int len = 0, i;
-	unsigned int internal_in = 0;
+	int internal_in = 0, ext_in = index;
 
 	while (n > 0)/*length of integer*/
 	{
@@ -24,18 +24,18 @@ int get_bit(unsigned long int n, unsigned int index)
 	{
 		if ((m >> i) & 1)/*use bitwise logic to get bits in order*/
 		{
-			if (index == 0)
+			if (ext_in == 0)
 				return (1);
 
-			if (internal_in == index - 1)
+			if (internal_in == ext_in - 1)
 				return (1);
 		}
 		else
 		{
-			if (index == 0)
+			if (ext_in == 0)
 				return (0);
 
-			if (internal_in == index - 1)
+			if (internal_in == ext_in - 1)
 				return (0);
 		}
 
