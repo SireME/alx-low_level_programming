@@ -1,7 +1,6 @@
 #include "main.h"
 #include <unistd.h>
 #include <fcntl.h>
-#include <string.h>
 #include <sys/stat.h>
 
 /**
@@ -14,7 +13,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fl, len = strlen(text_content);
+	int fl, len;
 	ssize_t wr;
 	mode_t mode;
 	struct stat sts;
@@ -29,12 +28,10 @@ int create_file(const char *filename, char *text_content)
 	/*open or create file if it not in existence and set permissions 0600*/
 	fl = open(filename, O_WRONLY | O_CREAT | O_TRUNC, mode);
 
-	if (text_content == NULL)/*if text_content is null = empty file*/
+	if (text_content != NULL)/*if text_content is null = empty file*/
 	{
-		close(fl);
-		fl = open(filename, O_CREAT, mode);
-		close(fl);
-		return (1);
+		for (len = 0; text_content[len]; len++)
+			;
 	}
 
 	if (fl == -1)/*file creation failure*/
