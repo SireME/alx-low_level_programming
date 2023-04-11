@@ -13,16 +13,10 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned long int m = n;
 	unsigned int len = 0;
 
-	if (index > sizeof(n) * 8 - 1)
+	if (index >= sizeof(n) * 8)
 		return (-1);
 
-	while (m > 0u)/*compute length of binary number*/
-	{
-		m >>= 1;
-		len++;
-	}
-
-	if (index >= len)/*terminate if index is greater than or len*/
+	if (index >= len)/*terminate if index is >=len*/
 		return (-1);
 
 	return ((n >> index) & 1); /*return value at index*/
