@@ -29,7 +29,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (fl == -1) /* file open failure */
 		return (-1);
 
-	if (text_content == NULL) /* if text_content is null, close file and return success */
+	if (text_content == NULL) /* if text content null management */
 	{
 		close(fl);
 		return (1);
