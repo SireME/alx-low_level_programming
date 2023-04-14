@@ -112,5 +112,5 @@ int main(int argc, char **argv)
 	main_copy(read_count, file_from, file_to, buffer, argv[2]);
 	close_and_read(read_count, file_from, file_to, argv[1]);
 
-	return (1);
+	return (0);
 }
