@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <errno.h>
-#include <sys/stat.h>
 
 #define BUFFER_SIZE 1024
 /**
@@ -37,6 +35,7 @@ void close_and_read(int read_count, int file_from, int file_to, char *firstf)
 	if (close(file_to) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
+		close(file_to);
 		exit(100);
 	}
 }
@@ -81,8 +80,6 @@ int main(int argc, char **argv)
 {
 	int file_from, file_to, read_count = 0;
 	char buffer[BUFFER_SIZE];
-	mode_t mode = 0644;
-	struct stat sts;
 
 	if (argc != 3)/* Check number of arguments */
 	{
@@ -97,11 +94,8 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	if (stat(argv[2], &sts) == 0)/*file permissions*/
-		mode = sts.st_mode & 0777;
-
 	/* Open destination file */
-	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
