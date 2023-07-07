@@ -17,14 +17,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
-	nvalue = malloc(sizeof(char) * (strlen(value) + 1));
+	nvalue = strdup(value);
 	if (nvalue == NULL)
 	{
 		free(nvalue);
 		return (0);
 	}
 
-	strcpy(nvalue, value);
 	newnode = create_node(key, nvalue);
 	if (newnode == NULL)
 	{
