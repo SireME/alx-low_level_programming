@@ -52,4 +52,7 @@ hash_node_t *create_node(const char *key, const char *value);
 
 /*give key index*/
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
+
+/*retrieve value associated with key*/
+char *hash_table_get(const hash_table_t *ht, const char *key);
 #endif
