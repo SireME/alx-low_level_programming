@@ -19,10 +19,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	nvalue = malloc(sizeof(char) * (strlen(value) + 1));
 	if (nvalue == NULL)
+	{
+		free(nvalue);
 		return (0);
+	}
 
 	strcpy(nvalue, value);
 	newnode = create_node(key, nvalue);
+	if (newnode == NULL)
+	{
+		return (0);
+	}
 
 	/*compute index from size and key using func*/
 	index = key_index(tempkey, ht->size);
@@ -56,16 +63,25 @@ hash_node_t *create_node(const char *key, const char *value)
 
 	node = malloc(sizeof(hash_node_t));/*allocate memory for node*/
 	if (node == NULL)
+	{
+		free(node);
 		return (NULL);
+	}
 
 	node->key = malloc(sizeof(char) * (strlen(key) + 1));/*memory for key*/
 	if (node->key == NULL)
+	{
+		free(node->key);
 		return (NULL);
+	}
 
 	strcpy(node->key, key); /*populate key value*/
 	node->value = malloc(sizeof(char) * (strlen(value) + 1));/*memory for value*/
 	if (node->value == NULL)
+	{
+		free(node->value);
 		return (NULL);
+	}
 
 	strcpy(node->value, value); /*populate value value*/
 
