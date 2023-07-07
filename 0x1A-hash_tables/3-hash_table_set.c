@@ -14,7 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *nvalue;
 	const unsigned char *tempkey = (const unsigned char *) key;
 
-	if (strlen(key) == 0)
+	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
 	nvalue = malloc(sizeof(char) * (strlen(value) + 1));
