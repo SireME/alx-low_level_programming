@@ -21,7 +21,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	table->size = size;
 
 	/*determine size of our array*/
-	table->array = malloc(sizeof(table->array) * table->size);
+	table->array = malloc(sizeof(*(table->array)) * table->size);
 	if (table->array == NULL) /* instance where malloc failed*/
 		return (NULL);
 
