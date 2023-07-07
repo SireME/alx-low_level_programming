@@ -13,7 +13,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	unsigned long int i;
 
 	/*dynamically allocate memory for our table*/
-	table = malloc(sizeof(table));
+	table = malloc(sizeof(hash_table_t));
 	if (table == NULL) /*instance where malloc failed*/
 		return (NULL);
 
