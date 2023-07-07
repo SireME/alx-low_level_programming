@@ -1,6 +1,6 @@
 # 0x1A-hash_tables  
 
-This Diiectory contains projects regarding hash tbales in C  
+This Diiectory contains projects regarding hash tables in C  
 
 Requirements
 ============
