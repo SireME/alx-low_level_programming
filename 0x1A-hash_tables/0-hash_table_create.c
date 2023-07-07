@@ -25,7 +25,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (table->array == NULL) /* instance where malloc failed*/
 		return (NULL);
 
-	for (i = 0; i < table->size; i++) /* instantiate array to NULL*/
+	for (i = 0; i < size; i++) /* instantiate array to NULL*/
 		table->array[i] = NULL;
 
 	return (table);
