@@ -13,10 +13,11 @@ int main(void)
     hash_table_t *ht;
     long unsigned int i;
 
-    ht = hash_table_create(1024);
+    ht = hash_table_create(10);
     printf("%p\n", (void *)ht);
+    if (ht == NULL)
+	    printf("yay size is zero");
     for (i = 0; i < ht->size; i++)/* print empty null coresonding to array size*/
-	    if (ht->array[i] == NULL)
-		    printf("NULL ");
+	    printf("NULL ");
     return (EXIT_SUCCESS);
 }
