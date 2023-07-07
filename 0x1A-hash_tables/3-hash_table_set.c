@@ -27,6 +27,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	newnode = create_node(key, nvalue);
 	if (newnode == NULL)
 	{
+		free(nvalue);
 		return (0);
 	}
 
@@ -71,6 +72,7 @@ hash_node_t *create_node(const char *key, const char *value)
 	if (node->key == NULL)
 	{
 		free(node->key);
+		free(node);
 		return (NULL);
 	}
 
@@ -79,6 +81,7 @@ hash_node_t *create_node(const char *key, const char *value)
 	if (node->value == NULL)
 	{
 		free(node->value);
+		free(node);
 		return (NULL);
 	}
 
