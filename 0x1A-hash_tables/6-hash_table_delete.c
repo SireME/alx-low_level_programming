@@ -12,10 +12,8 @@ void hash_table_delete(hash_table_t *ht)
 	hash_node_t *node, *temp;
 
 	if (ht == NULL)
-	{
-		free(ht);
 		return;
-	}
+
 	for (i = 0; i < ht->size; i++)
 	{
 		node = ht->array[i];
@@ -27,8 +25,6 @@ void hash_table_delete(hash_table_t *ht)
 			free(temp->value);
 			free(temp);
 		}
-		free(node);
-		ht->array[i] = NULL;
 	}
 
 	free(ht->array); /*free the array pointer itself*/
