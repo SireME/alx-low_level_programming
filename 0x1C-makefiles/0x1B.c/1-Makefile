@@ -1,0 +1,11 @@
+# compiler to be used
+CC = gcc
+
+# .c files
+SRC = main.c school.c
+
+# rule
+all: school
+
+school:
+	$(CC) $(SRC) -o school
