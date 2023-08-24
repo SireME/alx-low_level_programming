@@ -1,0 +1,22 @@
+CC = gcc
+
+# .c files
+SRC = main.c school.c
+
+# .o, object files
+OBJ = $(SRC:.c=.o)
+
+# executable name
+NAME = school
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $^ -o $@
+
+%.o: %.c
+	$(CC) -c -o $@ $<
+
+clean:
+	rm -f $(OBJ) $(NAME)
+
